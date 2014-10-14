@@ -1,0 +1,76 @@
+<!ELEMENT network (build, coap_groups?, node*) >
+<!ELEMENT build (make*, debug, application) >
+<!ELEMENT make EMPTY >
+<!ELEMENT debug EMPTY >
+<!ELEMENT application EMPTY >
+
+<!ELEMENT node ((emblem)?, firmware, phy, energy, (rpl)?, pubsub, coap, (gateway)?, (reasoning)?, (parameter*), sensors) >
+
+<!ELEMENT emblem EMPTY >
+<!ELEMENT firmware EMPTY >
+<!ELEMENT phy EMPTY >
+<!ELEMENT energy EMPTY >
+<!ELEMENT rpl (restrict_neighbors)? >
+<!ELEMENT pubsub EMPTY >
+<!ELEMENT coap_groups (group*) >
+<!ELEMENT coap (group*) >
+<!ELEMENT group (resource*)? >
+<!ELEMENT resource EMPTY>
+<!ELEMENT gateway EMPTY >
+<!ELEMENT parameter EMPTY >
+<!ELEMENT sensors (modality*) >
+
+<!ELEMENT restrict_neighbors (neighbor*) >
+<!ELEMENT neighbor EMPTY >
+
+<!ELEMENT modality (sensor*) >
+
+<!ELEMENT sensor ((i2c|gpio|adc), value, position) >
+
+<!ELEMENT i2c EMPTY >
+<!ELEMENT gpio EMPTY >
+<!ELEMENT adc EMPTY >
+<!ELEMENT value EMPTY >
+<!ELEMENT position EMPTY >
+<!ELEMENT reasoning ((reasoning_node)?, (monitored_area)?) >
+<!ELEMENT monitored_area EMPTY >
+<!ELEMENT reasoning_node EMPTY >
+
+<!ATTLIST emblem source CDATA #REQUIRED>
+<!ATTLIST group name CDATA #REQUIRED>
+<!ATTLIST resource name CDATA #REQUIRED>
+<!ATTLIST network pubsub_reliable (true|false) #REQUIRED failure_handling (true|false) #REQUIRED>
+
+<!ATTLIST reasoning min_intrusion_duration CDATA #REQUIRED max_intrusion_duration CDATA #REQUIRED latency_mode (white|green|yellow|orange|red) #REQUIRED >
+<!ATTLIST reasoning_node log_analyse_period CDATA #REQUIRED >
+<!ATTLIST monitored_area average_crossing_duration CDATA #REQUIRED >
+<!ATTLIST monitored_area area CDATA #REQUIRED >
+
+<!ATTLIST make path CDATA #IMPLIED args CDATA #IMPLIED root CDATA #REQUIRED output CDATA #REQUIRED target (host|aps3) #REQUIRED >
+<!ATTLIST debug wavesim (true|false) #IMPLIED uip (true|false) #IMPLIED sicslowpan (true|false) #IMPLIED rpl (true|false) #IMPLIED pubsub (true|false) #REQUIRED coap (true|false) #REQUIRED reasoning (true|false) #REQUIRED >
+<!ATTLIST application name CDATA #REQUIRED >
+
+<!ATTLIST node id CDATA #REQUIRED area CDATA #REQUIRED name CDATA #IMPLIED target (host|aps3) #REQUIRED simulation (true|false) #REQUIRED >
+
+<!ATTLIST firmware name CDATA #REQUIRED >
+<!ATTLIST phy x CDATA #REQUIRED y CDATA #REQUIRED range CDATA #REQUIRED>
+<!ATTLIST energy startup CDATA #REQUIRED alarm CDATA #REQUIRED >
+<!ATTLIST rpl prefix CDATA #IMPLIED root (true|false) #IMPLIED >
+<!ATTLIST pubsub enable (true|false) #REQUIRED broker (true|false) #IMPLIED>
+<!ATTLIST coap enable (true|false) #REQUIRED>
+<!ATTLIST gateway port CDATA #REQUIRED>
+<!ATTLIST parameter type (string|other) #IMPLIED name CDATA #REQUIRED value CDATA #IMPLIED>
+
+<!ATTLIST neighbor node_id CDATA #REQUIRED>
+
+<!ATTLIST sensors>
+
+<!ATTLIST modality type (PIR|SPIRIT|SEISMIC|SWITCH) #REQUIRED >
+
+<!ATTLIST sensor id CDATA #REQUIRED type (digital|analog) #REQUIRED period CDATA #REQUIRED delay CDATA #IMPLIED reemission_delay CDATA #IMPLIED>
+
+<!ATTLIST i2c address CDATA #REQUIRED register CDATA #REQUIRED >
+<!ATTLIST adc pin CDATA #REQUIRED >
+<!ATTLIST gpio pin CDATA #REQUIRED >
+<!ATTLIST value invert (true|false) #IMPLIED offset CDATA #IMPLIED mult CDATA #IMPLIED div CDATA #IMPLIED abs_threshold CDATA #REQUIRED rel_threshold CDATA #REQUIRED>
+<!ATTLIST position x CDATA #REQUIRED y CDATA #REQUIRED z_rotation CDATA #REQUIRED>

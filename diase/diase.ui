@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Diase</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QStackedWidget" name="stackedWidget">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="pageDeploymentView">
+       <layout class="QVBoxLayout" name="verticalLayout_4">
+        <item>
+         <widget class="QDeclarativeView" name="deploymentDeclarativeView"/>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="pageEditView">
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="QDeclarativeView" name="declarativeView"/>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="pageC2View">
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <widget class="QDeclarativeView" name="C2DeclarativeView"/>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="pageMonitoring">
+       <layout class="QVBoxLayout" name="verticalLayout_5">
+        <item>
+         <widget class="QDeclarativeView" name="monitoringDeclarativeView"/>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>&amp;File</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuNetwork">
+    <property name="title">
+     <string>&amp;Network</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>&amp;Help</string>
+    </property>
+    <addaction name="action_About_diase"/>
+   </widget>
+   <widget class="QMenu" name="menuDisplay">
+    <property name="title">
+     <string>&amp;Display</string>
+    </property>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuNetwork"/>
+   <addaction name="menuDisplay"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <widget class="FancyToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <property name="movable">
+    <bool>false</bool>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>LeftToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QToolBar" name="deploymentToolBar">
+   <property name="windowTitle">
+    <string>toolBar_2</string>
+   </property>
+   <property name="movable">
+    <bool>false</bool>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>RightToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QDockWidget" name="C2DockWidget">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="windowTitle">
+    <string>Alarms logs</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>8</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents">
+    <layout class="QVBoxLayout" name="verticalLayout_6">
+     <item>
+      <widget class="QTextEdit" name="C2TextEdit"/>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <action name="action_About_diase">
+   <property name="text">
+    <string>&amp;About diase</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QDeclarativeView</class>
+   <extends>QGraphicsView</extends>
+   <header>QtDeclarative/QDeclarativeView</header>
+  </customwidget>
+  <customwidget>
+   <class>FancyToolBar</class>
+   <extends>QToolBar</extends>
+   <header>fancytoolbar.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,21 @@
+diff --git a/view.cpp b/view.cpp
+index 3454f70..734b6d8 100644
+--- a/view.cpp
++++ b/view.cpp
+@@ -412,6 +412,8 @@ void View::addArea(AreaItemModel *area, bool update)
+     areaItem->setProperty("height", (yMax-yMin) + 40);
+     areaItem->setProperty("modelIndex", m_model->areasCount() - 1);
+ 
++    qDebug() << "=== mapping areaItem with modelIndex" << areaItem->property("modelIndex").toInt() << ": " << m_model->areaAt(areaItem->property("modelIndex").toInt())->objectName() < "===";
++
+     if (isC2View()) {
+         connect(areaItem, SIGNAL(ack(QVariant)), SLOT(ack(QVariant)));
+     }
+@@ -546,6 +548,7 @@ void View::ack(QVariant obj)
+ 
+ 
+     areaItem = m_model->areaAt(item->property("modelIndex").toInt());
++    qDebug() << "==== areaItem=" << areaItem << "(modelIndex=" << item->property("modelIndex").toInt() << ") ====";
+     foreach (QObject *obj, contentItemObj->children()) {
+         if (obj->objectName() == areaItem->objectName()) {
+             obj->setProperty("state", "");

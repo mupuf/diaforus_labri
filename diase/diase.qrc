@@ -1,0 +1,36 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icons/path.png</file>
+        <file>icons/previous.png</file>
+        <file>icons/intruder-black.png</file>
+        <file>icons/start.png</file>
+        <file>icons/stop.png</file>
+        <file>icons/intruder.png</file>
+        <file>qml/diase/Area.qml</file>
+        <file>qml/diase/Button.qml</file>
+        <file>qml/diase/GraphBar.qml</file>
+        <file>qml/diase/Intruder.qml</file>
+        <file>qml/diase/main.qml</file>
+        <file>qml/diase/MapView.qml</file>
+        <file>qml/diase/MonitoringView.qml</file>
+        <file>qml/diase/Node.qml</file>
+        <file>qml/diase/NodeModel.qml</file>
+        <file>qml/diase/Path.qml</file>
+        <file>qml/diase/PIR.qml</file>
+        <file>qml/diase/Range.qml</file>
+        <file>qml/diase/ResourceModel.qml</file>
+        <file>qml/diase/ResourceTile.qml</file>
+        <file>qml/diase/ResourceView.qml</file>
+        <file>qml/diase/ScrollBar.qml</file>
+        <file>qml/diase/SEISMIC.qml</file>
+        <file>qml/diase/ViewModel.qml</file>
+        <file>qml/diase/WellKnownModel.qml</file>
+        <file>qml/diase/Sensor.qml</file>
+        <file>qml/diase/SPIRIT.qml</file>
+        <file>qml/diase/images/carte_stic.png</file>
+        <file>icons/car-white.png</file>
+        <file>icons/car-black.png</file>
+        <file>qml/diase/images/antenne.png</file>
+        <file>qml/diase/images/antenne_alarme.png</file>
+    </qresource>
+</RCC>
